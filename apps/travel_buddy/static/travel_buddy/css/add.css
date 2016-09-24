@@ -1,0 +1,15 @@
+form {
+	margin-left: 50px;
+}
+body {
+	width: 900px;
+}
+.link {
+	text-align: right;
+}
+a {
+	margin-left: 15px;
+}
+.submit{
+	margin-left: 250px;
+}

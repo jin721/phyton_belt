@@ -1,0 +1,15 @@
+body{
+	width: 900px;
+}
+#trip{
+	margin-bottom: 100px;
+}
+div h3{
+	margin: 0px 0px 15px 20px;
+}
+.link{
+	text-align: right;
+}
+a{
+	margin-left: 20px;
+}

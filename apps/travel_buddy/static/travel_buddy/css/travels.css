@@ -1,0 +1,21 @@
+body{
+	width: 900px;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+h4{
+	margin: 5px;
+}
+th {
+	padding: 5px 15px;
+	text-align: left;
+}
+.link{
+	text-align: right;
+}

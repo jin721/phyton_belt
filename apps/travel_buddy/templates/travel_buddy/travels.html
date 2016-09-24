@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Buddy</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/travels.css' %}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="link"><a href="/logout">Logout</a></div>
+	<h1>Hello, {{user.0.name}}!</h1>
+	<h4>Your Trip Schedules</h4>
+	<table>
+		<tr>
+			<th>Destination</th>
+			<th>Travel Start Date</th>
+			<th>Travel End Date</th>
+			<th>Plan</th>
+		</tr>
+		{% if your_trip %}
+		{% for trip in your_trip %}
+		<tr>
+			<th><a href="/travels/destination/{{trip.id}}">{{trip.destination}}</a></th>
+			<th>{{trip.date_from}}</th>
+			<th>{{trip.date_to}}</th>
+			<th>{{trip.description}}</th>
+		</tr>
+		{% endfor %}
+		{% endif %}
+	</table>
+	<h4>Other User's Travel Plans</h4>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Destination</th>
+			<th>Travel Start Date</th>
+			<th>Travel End Date</th>
+			<th>Do You Want to Join?</th>
+		</tr>
+		{% if other_trip %}
+		{% for trip in other_trip %}
+		<tr>
+			<th>{{trip.user.name}}</th>
+			<th><a href="/travels/destination/{{trip.id}}">{{trip.destination}}</a></th>
+			<th>{{trip.date_from}}</th>
+			<th>{{trip.date_to}}</th>
+			<th><a href="/travels/destination/join/{{trip.id}}">Join</a></th>
+		</tr>
+		{% endfor %}
+		{% endif %}
+	</table>
+	<div class="link"><a href="/travels/add">Add Travel Plan</a></div>
+</body>
+</html>

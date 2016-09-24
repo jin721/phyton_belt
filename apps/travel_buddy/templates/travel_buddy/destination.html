@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Buddy</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/destination.css' %}">
+</head>
+<body>
+	<div class="link"><a href="/travels">Home</a><a href="/logout">Logout</a></div>
+	<div id="trip">
+		<h1>{{trip.destination}}</h1>
+		<h3>Planned By: {{trip.user.name}}</h3>
+		<h3>Description: {{trip.description}}</h3>
+		<h3>Travel Date From: {{trip.date_from}}</h3>
+		<h3>Travel Date To: {{trip.date_to}}</h3>
+	</div>
+	<div>
+		<h2>Other users' joining the trip:</h2>
+		{% if jointrip %}
+		{% for trip in jointrip %}
+			<h3>{{trip.user.name}}</h3>
+		{% endfor %}
+		{% endif %}
+	</div>
+</body>
+</html>

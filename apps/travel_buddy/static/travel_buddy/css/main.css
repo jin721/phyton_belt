@@ -1,0 +1,13 @@
+#register, #login {
+	border: solid black 1px;
+	display: inline-block;
+	width: 350px;
+	vertical-align: top;
+	padding: 0px 30px 30px 30px;
+}
+input {
+	margin-left: 15px;
+}
+.submit {
+	margin-left: 230px;
+}
